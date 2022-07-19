@@ -22,7 +22,15 @@
           { text: 'Fat (g)', value: 'fat' },
           { text: 'Carbs (g)', value: 'carbs' },
           { text: 'Protein (g)', value: 'protein' },
-          { text: 'Iron (%)', value: 'iron' },
+          { 
+            text: 'Iron (%)',
+            value: 'iron',
+            sort: (a, b) => {
+              a = a.replace(/[^0-9]/g, '');
+              b = b.replace(/[^0-9]/g, '');
+              return a-b;
+            }
+          },
         ],
         desserts: [
           {
